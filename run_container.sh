@@ -22,7 +22,7 @@
 # SOFTWARE.
 
 IMAGE_NAME="influxdb2builder"
-BUILD_OUTPUT="${HOME}/influxdb2/build_output"
+BUILD_OUTPUT="$(pwd)/build_output"
 
 # Automaticly detect latest branch/tag
 get_release() {
@@ -33,8 +33,8 @@ get_release() {
 
 # Detect and use latest branch/tag
 # Can be set manually if a specific branch is required e.g., v2.1.1
-INFLUXDB2_BRANCH=`get_release influxdata/influxdb`
-INFLUXCLI_BRANCH=`get_release influxdata/influx-cli`
+INFLUXDB2_BRANCH="v2.1.1"
+INFLUXCLI_BRANCH="v2.1.1"
 
 # Create output folder
 if [ ! -d ${BUILD_OUTPUT} ]; then
